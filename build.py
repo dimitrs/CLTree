@@ -45,7 +45,8 @@ class BuildTree(object):
         
     def _splitDatasetUsingBestCut(self, dataset, bestCut):                           
         dataset.sort(bestCut.attribute)        
-        idx = dataset.getInstanceIndex(bestCut.inst_id)        
+        idx = dataset.getInstanceIndex(bestCut.inst_id)    
+        idx = idx[0]
         lhs_set, rhs_set = self.datasetSplitter.split(dataset, bestCut.attribute, bestCut.value, idx+1)                        
         
         for attribute in dataset.attr_names:        
@@ -122,6 +123,7 @@ class DatasetSplitter:
         pass
     
     def split(self, dataset, attribute, value, idx):
+        #print(type(idx))
         l = dataset.instance_values[0:idx]
         r = dataset.instance_values[idx:]
                 
