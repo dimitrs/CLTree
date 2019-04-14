@@ -77,7 +77,7 @@ class Data:
             idx = np.argwhere(self.instance_view[:,0] == id)
             return idx[0]
         elif self.length() == 1 and id == self.instance_view[0]:            
-            return 0
+            return [0]
         else:
             return None
     
@@ -123,9 +123,9 @@ class ArffReader:
         output = np.array(output, dtype=types)
         data = Data(output, class_map, classes_names, types)
                 
-        print "read " + str(data.length()) + ' instances from ' + filename
-        print "attribute names:", data.attr_types
-        print "class names:", data.class_names
+        print ("read " + str(data.length()) + ' instances from ' + filename)
+        print ("attribute names:", data.attr_types)
+        print ("class names:", data.class_names)
         return data
         
     def _read_header(self, contents):

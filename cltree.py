@@ -59,9 +59,9 @@ class CLTree:
 
     
 if __name__ == '__main__':
-    print '----------------'
-    print 'Clustering      '
-    print '----------------'
+    print ('----------------')
+    print ('Clustering      ')
+    print ('----------------')
     r = ArffReader()
     #data = r.read('test/gen.arff')
     data = r.read('test/D05.arff')
@@ -102,9 +102,9 @@ if __name__ == '__main__':
         clusterplt.line(dim1, x1_min, x0_min, x0_max)
         """
         c += node.getNrInstancesInNode()
-        print "Cluster", i
-        print node
-    print "Total instances clustered: ", c
+        print ("Cluster", i)
+        print (node)
+    print ("Total instances clustered: ", c)
     #clusterplt.draw()
     #myplt.draw()
     
