@@ -75,7 +75,6 @@ class Data:
     def getInstanceIndex(self, id):
         if self.length() > 1:                
             idx = np.argwhere(self.instance_view[:,0] == id)
-            print(idx)
             return idx[0]
         elif self.length() == 1 and id == self.instance_view[0]:            
             return [0]
